@@ -2,16 +2,13 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الكوخ كافيه - قائمة الطعام</title>
-    <!-- خطوط جوجل -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>الكوخ كافيه - قائمة فاخرة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (مجاني) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* الأنماط السابقة كما هي */
         * {
             margin: 0;
             padding: 0;
@@ -19,425 +16,366 @@
         }
 
         body {
-            font-family: 'Cairo', 'Tajawal', sans-serif;
-            background-color: #0a0a0a;
-            color: #f5e7c8;
-            line-height: 1.6;
-            background-image: radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 30%);
+            font-family: 'Cairo', sans-serif;
+            background: radial-gradient(circle at 20% 30%, #0a0510, #010101);
+            color: #f5efdf;
+            line-height: 1.5;
         }
 
-        .top-border {
+        .top-glow {
             height: 5px;
-            background: linear-gradient(90deg, #ffd700, #b8860b, #ffd700);
+            background: linear-gradient(90deg, #ffd966, #ff6b6b, #4d9eff, #ffd966);
+            box-shadow: 0 0 12px #ffaa33;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 20px 30px;
-            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-            border-bottom: 2px solid #ffd700;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.8);
-            position: relative;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ffd700, transparent);
-        }
-
-        .logo-container {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            border: 3px solid #ffd700;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            background-color: #000;
+        .header-modern {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 35px 20px 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 200, 100, 0.5);
         }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
+        .logo-small {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 3px solid #ffc107;
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.8);
             object-fit: cover;
+            background: #1a1a1a;
         }
-
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
+        .cafe-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd966, #ff884d, #ff4d6d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             letter-spacing: 2px;
-            color: #ffd700;
-            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
-            margin-bottom: 5px;
         }
-
-        .location {
-            font-size: 1.2rem;
-            color: #c0a86a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(255,215,0,0.1);
-            padding: 8px 20px;
-            border-radius: 50px;
-            width: fit-content;
-            margin: 10px auto 0;
-            border: 1px solid #ffd70033;
-        }
-
-        .location i {
-            color: #ffd700;
-        }
-
-        .menu-container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .section-card {
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(5px);
-            border-radius: 30px;
-            padding: 25px;
-            margin-bottom: 35px;
-            border: 1px solid #ffd70040;
-            box-shadow: 0 15px 30px -10px black;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -5px #ffd70020;
-            border-color: #ffd700;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 2.2rem;
-            color: #ffd700;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-title i {
-            font-size: 2rem;
-            background: #ffd70020;
-            padding: 10px;
-            border-radius: 50%;
-            color: #ffd700;
-        }
-
-        .items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 18px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 40px;
-            border: 1px solid #ffd70030;
-            transition: all 0.2s ease;
-            font-size: 1.2rem;
-        }
-
-        .menu-item:hover {
-            background: #ffd70010;
-            border-color: #ffd700;
-            transform: scale(1.02);
-        }
-
-        .item-name {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .item-name i {
-            color: #ffd700;
-            font-size: 1rem;
-            opacity: 0.7;
-        }
-
-        .price {
-            font-weight: 700;
-            background: #ffd700;
-            color: #000;
-            padding: 4px 15px;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            box-shadow: 0 0 10px #ffd700;
-        }
-
-        /* رابط الخريطة */
-        .map-link {
+        .location-tag {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 215, 0, 0.15);
-            color: #ffd700;
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            border: 1px solid #ffd700;
-            transition: 0.3s;
-            font-size: 1.1rem;
+            background: rgba(255, 200, 100, 0.15);
+            border-radius: 60px;
+            padding: 6px 20px;
+            margin-top: 10px;
+            font-size: 1rem;
+            border: 1px solid #ffc10799;
+            backdrop-filter: blur(4px);
         }
 
-        .map-link:hover {
-            background: #ffd700;
-            color: #000;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffd700;
+        .container {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 25px;
         }
 
-        footer {
-            background: #000;
-            border-top: 3px solid #ffd700;
-            padding: 30px 20px;
+        .menu-section {
+            background: rgba(15, 12, 20, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 45px;
+            padding: 28px 24px;
+            margin-bottom: 45px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            transition: all 0.3s;
+        }
+        .menu-section:hover {
+            border-color: #ffc107;
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.2);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            border-right: 6px solid #ffaa44;
+            padding-right: 20px;
+        }
+        .section-head span {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 4px gold);
+        }
+        .section-head h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffdfa5, #ffb347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .food-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: 35px;
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            padding: 20px 12px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: default;
+        }
+        .food-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffaa33;
+            background: rgba(30, 25, 40, 0.9);
+            box-shadow: 0 20px 30px -5px #ffaa3350;
+        }
+        .emoji-icon {
+            font-size: 3.5rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+        }
+        .hookah-icon {
+            font-size: 3.5rem;
+            color: #ffaa44;
+            margin-bottom: 15px;
+            display: inline-block;
+            filter: drop-shadow(0 0 6px #ffaa44);
+        }
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff2df;
+        }
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #ffc107, #ff8c00);
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 60px;
+            margin-top: 12px;
+            color: #1f1a0c;
+            box-shadow: 0 0 12px #ffaa33;
+        }
+
+        .footer-new {
+            background: #03010a;
+            border-top: 2px solid #ffc107;
+            padding: 45px 20px;
             text-align: center;
         }
-
-        .footer-content {
-            max-width: 600px;
+        .footer-flex {
+            max-width: 700px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .whatsapp-btn {
+        .whatsapp-modern {
+            background: #25d366;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #25d366;
+            gap: 12px;
             color: white;
-            padding: 12px 30px;
-            border-radius: 60px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.2s;
-            border: 2px solid transparent;
+            transition: 0.2s;
+            box-shadow: 0 0 15px #25d36680;
         }
-
-        .whatsapp-btn:hover {
-            background: #1ebe57;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #25d366;
+        .whatsapp-modern:hover {
+            transform: scale(1.03);
+            background: #1da15b;
         }
-
-        .qr-container {
+        .qr-box {
             background: white;
             padding: 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
+            border-radius: 28px;
         }
-
-        .qr-container img {
+        .qr-box img {
             width: 120px;
             height: 120px;
-            border-radius: 10px;
-            display: block;
+            border-radius: 20px;
+        }
+        .insta-handle {
+            color: #ffc107;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .insta-handle i {
+            margin-left: 8px;
         }
 
-        .qr-label {
-            color: #ffd700;
-            margin-top: 8px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .section-title { font-size: 1.8rem; }
-            .items-grid { grid-template-columns: 1fr; }
-            .menu-item { font-size: 1rem; }
+        @media (max-width: 700px) {
+            .cafe-name { font-size: 2rem; }
+            .logo-small { width: 70px; height: 70px; }
+            .section-head h2 { font-size: 1.5rem; }
+            .cards-grid { gap: 18px; }
         }
     </style>
 </head>
 <body>
-    <div class="top-border"></div>
+<div class="top-glow"></div>
 
-    <header>
-        <div class="logo-container">
-            <!-- استخدمت النص من الملف الثاني كبديل للصورة -->
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' fill='%23000000'/%3E%3Ctext x='75' y='70' font-family='Cairo, sans-serif' font-size='22' fill='%23ffd700' text-anchor='middle' font-weight='bold'%3Eالكوخ%3C/text%3E%3Ctext x='75' y='100' font-family='Cairo, sans-serif' font-size='18' fill='%23ffd700' text-anchor='middle'%3Eكافيه%3C/text%3E%3C/svg%3E"
-                 alt="الكوخ كافيه">
-        </div>
-        <h1>الكوخ كافيه</h1>
-        <div class="location">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>الكوت - الكفاءات</span>
-        </div>
-        <!-- رابط الخريطة المحدث -->
-        <a class="map-link" href="https://maps.google.com/maps?q=32.51944351196289,45.802764892578125&z=17" target="_blank">
-            <i class="fas fa-location-dot"></i> افتح الموقع على خرائط Google
-        </a>
-    </header>
-
-    <div class="menu-container">
-        <!-- العصائر (تمت إضافة مشروب طاقة مكسيكي) -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-glass-cheers"></i>
-                <span>العصائر الطازجة</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name"><i class="fas fa-blender"></i> برتقال</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-lemon"></i> ليمون</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-leaf"></i> ليمون ونعناع</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-strawberry"></i> فراولة</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-mango"></i> منكة</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-watermelon"></i> بطيخ</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-cow"></i> موز وحليب</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-apple-alt"></i> خوخ</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-apple-alt"></i> مشمش</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name"><i class="fas fa-cocktail"></i> كوكتيل فواكه</span><span class="price">3000</span></div>
-                <!-- إضافة جديدة -->
-                <div class="menu-item"><span class="item-name"><i class="fas fa-bolt"></i> مشروب طاقة مكسيكي</span><span class="price">2000</span></div>
-            </div>
-        </div>
-
-        <!-- السموذي -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-smoothie"></i>
-                <span>سموذي</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name">فراولة</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">منكة</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">أناناس</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">بلو بيري</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">ريد بيري</span><span class="price">2000</span></div>
-            </div>
-        </div>
-
-        <!-- الموهيتو -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-cocktail"></i>
-                <span>موهيتو</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name">فراولة</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">أناناس</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">تفاح</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">ليمون ونعناع</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">ريد بيري</span><span class="price">2000</span></div>
-                <div class="menu-item"><span class="item-name">بلو بيري</span><span class="price">2000</span></div>
-            </div>
-        </div>
-
-        <!-- المشروبات الساخنة -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-mug-hot"></i>
-                <span>مشروبات ساخنة</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name">قهوة تركية</span><span class="price">1500</span></div>
-                <div class="menu-item"><span class="item-name">قهوة وسط</span><span class="price">1000</span></div>
-                <div class="menu-item"><span class="item-name">قهوة جكليتية</span><span class="price">1000</span></div>
-                <div class="menu-item"><span class="item-name">كابتشينو</span><span class="price">1000</span></div>
-                <div class="menu-item"><span class="item-name">چاي الكوخ</span><span class="price">500</span></div>
-            </div>
-        </div>
-
-        <!-- الأركيلة (تم حذف كيوي ليمون) -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-smoking"></i>
-                <span>الأركيلة</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name">علچ بنعناع</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">نعناع</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">الكوخ</span><span class="price">5000</span></div>
-                <div class="menu-item"><span class="item-name">إنكليزي</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">تفاحتين</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">ليمون نعناع</span><span class="price">3000</span></div>
-                <!-- تم حذف "كيوي ليمون" -->
-                <div class="menu-item"><span class="item-name">باونتي معجنات</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">هافانا</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">حمضيات</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">عنب نعناع</span><span class="price">3000</span></div>
-                <div class="menu-item"><span class="item-name">طبيعي</span><span class="price">10000</span></div>
-            </div>
-        </div>
-
-        <!-- الميلك شيك (تم تحديث الأسعار إلى 6000) -->
-        <div class="section-card">
-            <div class="section-title">
-                <i class="fas fa-milk"></i>
-                <span>ميلك شيك</span>
-            </div>
-            <div class="items-grid">
-                <div class="menu-item"><span class="item-name">فراولة</span><span class="price">6000</span></div>
-                <div class="menu-item"><span class="item-name">أوريو</span><span class="price">6000</span></div>
-                <div class="menu-item"><span class="item-name">شوكولاتة</span><span class="price">6000</span></div>
-                <div class="menu-item"><span class="item-name">نوتيلا</span><span class="price">6000</span></div>
+<header>
+    <div class="header-modern">
+        <img src="80d2b847020d8ff2916eb7728ab4e17.jpg" alt="شعار الكوخ" class="logo-small" onerror="this.src='https://placehold.co/100x100/222/ffc107?text=الكوخ'">
+        <div style="text-align: center;">
+            <div class="cafe-name">الكوخ كافيه</div>
+            <div class="location-tag">
+                📍 الكوت - الكفاءات
             </div>
         </div>
     </div>
+</header>
 
-    <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <div class="location" style="background: transparent; border: 1px solid #ffd700;">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>الكوت - الكفاءات</span>
-                </div>
-                <!-- تم تحديث رقم واتساب -->
-                <a class="whatsapp-btn" href="https://wa.me/9647735480035" target="_blank">
-                    <i class="fab fa-whatsapp"></i> +964 773 548 0035
-                </a>
-            </div>
-            
-            <!-- رمز QR ديناميكي للصفحة الحالية (المنيو) -->
-            <div class="qr-container" id="qr-code-container">
-                <img id="qr-code-img" src="" alt="QR Code للمنيو">
-            </div>
-            <div class="qr-label">
-                <i class="fas fa-qrcode"></i> امسح الرمز لفتح المنيو مباشرة
-            </div>
+<div class="container">
+    <!-- 1. عصائر طازجة -->
+    <div class="menu-section">
+        <div class="section-head"><span>🧃🍊</span><h2>عصائر طازجة</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">🍊</div><div class="item-title">برتقال</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍋</div><div class="item-title">ليمون</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍃🍋</div><div class="item-title">ليمون ونعناع</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍓</div><div class="item-title">فراولة</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🥭</div><div class="item-title">منكة</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍉</div><div class="item-title">بطيخ</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍌🥛</div><div class="item-title">موز وحليب</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍑</div><div class="item-title">خوخ</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍑</div><div class="item-title">مشمش</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤🍍</div><div class="item-title">كوكتيل فواكه</div><div class="item-price">3000</div></div>
+            <div class="food-card"><div class="emoji-icon">⚡🧃</div><div class="item-title">مشروب طاقه مكسيكي</div><div class="item-price">2000</div></div>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentUrl = window.location.href;
-            const qrImg = document.getElementById('qr-code-img');
-            qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(currentUrl)}`;
-        });
-    </script>
+    <!-- 2. سموذي -->
+    <div class="menu-section">
+        <div class="section-head"><span>🥤🍓</span><h2>سموذي</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">🍓🥤</div><div class="item-title">فراولة</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🥭</div><div class="item-title">منكة</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍍</div><div class="item-title">أناناس</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🫐</div><div class="item-title">بلو بيري</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍒</div><div class="item-title">ريد بيري</div><div class="item-price">2000</div></div>
+        </div>
+    </div>
+
+    <!-- 3. موهيتو -->
+    <div class="menu-section">
+        <div class="section-head"><span>🍹🌿</span><h2>موهيتو</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">🍓🍹</div><div class="item-title">فراولة</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍍</div><div class="item-title">أناناس</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍎</div><div class="item-title">تفاح</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍋🌿</div><div class="item-title">ليمون ونعناع</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍒</div><div class="item-title">ريد بيري</div><div class="item-price">2000</div></div>
+            <div class="food-card"><div class="emoji-icon">🫐</div><div class="item-title">بلو بيري</div><div class="item-price">2000</div></div>
+        </div>
+    </div>
+
+    <!-- 4. مشروبات ساخنة -->
+    <div class="menu-section">
+        <div class="section-head"><span>☕️🔥</span><h2>مشروبات ساخنة</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">☕️</div><div class="item-title">قهوة تركية</div><div class="item-price">1500</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤☕️</div><div class="item-title">قهوة وسط</div><div class="item-price">1000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍫☕️</div><div class="item-title">قهوة جكليتية</div><div class="item-price">1000</div></div>
+            <div class="food-card"><div class="emoji-icon">☕️✨</div><div class="item-title">كابتشينو</div><div class="item-price">1000</div></div>
+            <div class="food-card"><div class="emoji-icon">🍵</div><div class="item-title">چاي الكوخ</div><div class="item-price">500</div></div>
+        </div>
+    </div>
+
+    <!-- 5. مشروبات غازية + ماء -->
+    <div class="menu-section">
+        <div class="section-head"><span>🥤🧃</span><h2>مشروبات غازية & ماء</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">🥤</div><div class="item-title">ببسي</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤✨</div><div class="item-title">سفن اب</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">🍊🥤</div><div class="item-title">ميرندا</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤💚</div><div class="item-title">سبرايت</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤⚫️</div><div class="item-title">ببسي دايت</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">🥤⚪️</div><div class="item-title">سفن اب دايت</div><div class="item-price">500</div></div>
+            <div class="food-card"><div class="emoji-icon">💧🧂</div><div class="item-title">ماء معدني</div><div class="item-price">250</div></div>
+        </div>
+    </div>
+
+    <!-- 6. اراكيل طه بابلي -->
+    <div class="menu-section">
+        <div class="section-head"><span>💨🏺</span><h2>اراكيل طه بابلي</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><i class="fas fa-smoking hookah-icon"></i><div class="item-title">علچ بنعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-smoking hookah-icon"></i><div class="item-title">نعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-crown hookah-icon" style="color:#ffcc44;"></i><div class="item-title">الكوخ</div><div class="item-price">5000</div></div>
+            <div class="food-card"><i class="fas fa-flag-usa hookah-icon"></i><div class="item-title">إنكليزي</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-apple-alt hookah-icon"></i><div class="item-title">تفاحتين</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-leaf hookah-icon"></i><div class="item-title">ليمون نعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-candy-cane hookah-icon"></i><div class="item-title">باونتي معجنات</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-fire hookah-icon"></i><div class="item-title">هافانا</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-seedling hookah-icon"></i><div class="item-title">طبيعي</div><div class="item-price">10000</div></div>
+            <div class="food-card"><i class="fas fa-lemon hookah-icon"></i><div class="item-title">حمضيات</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-grape hookah-icon"></i><div class="item-title">عنب نعناع</div><div class="item-price">3000</div></div>
+        </div>
+    </div>
+
+    <!-- 7. أراكيل خشب -->
+    <div class="menu-section">
+        <div class="section-head"><span>🪵💨</span><h2>أراكيل خشب</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><i class="fas fa-smoking hookah-icon"></i><div class="item-title">علچ بنعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-smoking hookah-icon"></i><div class="item-title">نعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-crown hookah-icon" style="color:#ffcc44;"></i><div class="item-title">الكوخ</div><div class="item-price">5000</div></div>
+            <div class="food-card"><i class="fas fa-flag-usa hookah-icon"></i><div class="item-title">إنكليزي</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-apple-alt hookah-icon"></i><div class="item-title">تفاحتين</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-leaf hookah-icon"></i><div class="item-title">ليمون نعناع</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-candy-cane hookah-icon"></i><div class="item-title">باونتي معجنات</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-fire hookah-icon"></i><div class="item-title">هافانا</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-seedling hookah-icon"></i><div class="item-title">طبيعي</div><div class="item-price">10000</div></div>
+            <div class="food-card"><i class="fas fa-lemon hookah-icon"></i><div class="item-title">حمضيات</div><div class="item-price">3000</div></div>
+            <div class="food-card"><i class="fas fa-grape hookah-icon"></i><div class="item-title">عنب نعناع</div><div class="item-price">3000</div></div>
+        </div>
+    </div>
+
+    <!-- 8. ميلك شيك -->
+    <div class="menu-section">
+        <div class="section-head"><span>🥛🍫</span><h2>ميلك شيك</h2></div>
+        <div class="cards-grid">
+            <div class="food-card"><div class="emoji-icon">🍓🥛</div><div class="item-title">فراولة</div><div class="item-price">2500</div></div>
+            <div class="food-card"><div class="emoji-icon">🍪🥛</div><div class="item-title">أوريو</div><div class="item-price">2500</div></div>
+            <div class="food-card"><div class="emoji-icon">🍫🥛</div><div class="item-title">شوكولاتة</div><div class="item-price">2500</div></div>
+            <div class="food-card"><div class="emoji-icon">🍫🧴</div><div class="item-title">نوتيلا</div><div class="item-price">2500</div></div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-new">
+    <div class="footer-flex">
+        <div class="location-tag" style="background:#111;">📍 الكوت - الكفاءات</div>
+        <a class="whatsapp-modern" href="https://wa.me/9647735480035" target="_blank">
+            <span>📱</span> +964 773 548 0035
+        </a>
+        <div class="qr-box" id="qr-code-container">
+            <img id="qr-code-img" src="" alt="QR Code">
+        </div>
+        <div class="insta-handle">
+            <i class="fab fa-instagram"></i> تابعونا على انستقرام
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const instaUrl = 'https://www.instagram.com/alkokhcafe';
+        const qrImg = document.getElementById('qr-code-img');
+        qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(instaUrl)}`;
+    });
+</script>
 </body>
 </html>
